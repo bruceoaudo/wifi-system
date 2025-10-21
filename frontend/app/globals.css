@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+
+input {
+  @apply border border-[rgba(0,0,0,0.2)] h-[60px] w-full rounded-sm indent-3 text-lg placeholder:text-lg focus:outline-0 focus:border-2 focus:border-sky-400
+}
+
+button{
+  @apply h-[60px] w-full
+}

@@ -1,0 +1,33 @@
+services:
+  mongodb:
+    image: mongo:6.0
+    container_name: wifi_mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: wifidb
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - wifi-network
+
+  redis:
+    image: redis:7
+    container_name: wifi-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redisdata:/data
+    networks:
+      - wifi-network
+
+volumes:
+  mongo_data:
+  redisdata:
+
+networks:
+  wifi-network:
