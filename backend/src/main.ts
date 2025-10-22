@@ -11,7 +11,7 @@ async function bootstrap() {
 
   // Enable CORS
   app.enableCors({
-    origin: ['https://ca70c89f4457.ngrok-free.app'], // frontend URL
+    origin: ['192.168.88.10:3000'], // frontend URL
     credentials: true,
   });
 
